@@ -6,7 +6,7 @@
 
 {% block mainBody %}
 	<h1>The Post {{title}} Page</h1>
-	<form action="{% url 'posts:update' post_id=update_object.id %}" method="POST">
+	<form action="{% url 'posts:update' post_id=update_object.id %}" method="POST" nctype="multipart/form-data">
 	{% csrf_token %}
 	{{form.as_p}}
 	<input type="submit" name="Update Post">

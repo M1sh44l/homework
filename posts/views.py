@@ -9,7 +9,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def post_create(request):
-	form = PostForm(request.POST or None)
+	form = PostForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
 		messages.success(request, "Successfuly created a post!")
@@ -51,7 +51,7 @@ def post_detail(request, post_id):
 
 def post_update(request, post_id):
 	update_obj = get_object_or_404(Post, id=post_id)
-	form = PostForm(request.POST or None, instance=update_obj)
+	form = PostForm(request.POST or None, request.FILES or None,instance=update_obj)
 	if form.is_valid():
 		form.save()
 		messages.success(request, "Successfully edited post!")

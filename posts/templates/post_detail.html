@@ -7,6 +7,12 @@
 {% block mainBody %}
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
+			{% if detailed_object.image %}
+
+				<img src="{{detailed_object.image.url}}" alt="" class="img-responsive">
+				
+			{% endif %}
+
 		<h1>{{detailed_object.title}} <small>{{detailed_object.timestamp}}</small></h1>
 		{{detailed_object.content| linebreaks}}
 	</div>

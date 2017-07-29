@@ -10,6 +10,9 @@
 		{% for x in the_object_list %}
 			<div class="col-sm-6 col-sm-offset-3">
 				<div class="thumbnail">
+				{% if x.image %}
+				<img src="{{x.image.url}}" alt="" class="img-responsive">					
+				{% endif %}
 					<div class="caption">
 						<h3><a href="{{x.get_absolute_url}}">{{x.title}}</a><small> {{x.timestamp| timesince }} ago</small></h3>
 						<p>{{x.content| linebreaks|truncatechars:100}}</p>
