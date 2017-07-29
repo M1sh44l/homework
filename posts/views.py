@@ -16,8 +16,8 @@ def post_list(request):
 	}
 	return render(request, "post_list.html", context)
 
-def post_detail(request):
-	detailed_obj = get_object_or_404(Post, id=1)
+def post_detail(request, post_id):
+	detailed_obj = get_object_or_404(Post, id=post_id)
 	context = {
 		"detailed_object": detailed_obj,
 		"title": "Detail",
