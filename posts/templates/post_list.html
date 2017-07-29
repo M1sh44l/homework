@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post List</title>
+</head>
+<body>
+<h1>The Post {{title}} Page</h1>
+
+<br>
+<br>
+		<ol>
+		{% for x in the_object_list %}
+			<li>{{x.title}}</li>
+			{{x.content}} <br>
+			{{x.timestamp}} <br>
+			{{x.updated}} <br>
+			{{x.id}} <br>
+			{{x.pk}} <br>
+		{%endfor%}
+		</ol>
+</body>
+</html>
