@@ -8,9 +8,10 @@
 
 <br>
 <br>
+		<!--<a href="/posts/detail/{{x.id}}">{{x.title}}</a>-->
 		<ol>
 		{% for x in the_object_list %}
-			<li>{{x.title}}</li>
+			<li><a href="{{x.get_absolute_url}}">{{x.title}}</a></li>
 			{{x.content}} <br>
 			{{x.timestamp}} <br>
 			{{x.updated}} <br>
