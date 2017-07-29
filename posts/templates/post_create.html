@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create</title>
+	<title>Post {{title}}</title>
 </head>
 <body>
-		<h1>Hello there!</h1>
-		<p>This is a paragraph to test out our html page!</p>
-		<ol><h1>This is an ordered list</h1>
-			<li>One here</li>
-			<li>Two here</li>
-			<li>Three here and there!</li></ol>
+		<h1>The Post {{title}} Page</h1>
+		<form action="{% url 'posts:create' %}" method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" name="Create Post">
+		</form>
 </body>
 </html>
