@@ -50,6 +50,8 @@ def post_update(request, post_id):
 	return render(request, "post_update.html", context)
 
 
-def post_delete(request):
-	return HttpResponse("<h1> Delete </h1>")
-
+def post_delete(request, post_id):
+	delete_obj = get_object_or_404(Post, id=post_id)
+	delete_obj.delete()
+	messages.success(request, "Successfully deleted!")
+	return redirect("posts:list")

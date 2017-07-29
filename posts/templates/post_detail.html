@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Detail Page</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}
+	Detail
+{% endblock title %}
+
+{% block mainBody %}
 	<h1>This is the {{title}} Page</h1>
 	{{detailed_object}}
 
-</body>
-</html>
+{% endblock mainBody %}

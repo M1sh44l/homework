@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Post List</title>
-</head>
-<body>
-<h1>The Post {{title}} Page</h1>
+{% extends "base.html" %}
 
-<br>
-<br>
-		<!--<a href="/posts/detail/{{x.id}}">{{x.title}}</a>-->
+{% block title %}
+	List
+{% endblock title %}
+
+{% block mainBody %}
+<h1>The Post {{title}} Page</h1>
 		<ol>
 		{% for x in the_object_list %}
 			<li><a href="{{x.get_absolute_url}}">{{x.title}}</a></li>
@@ -19,5 +16,4 @@
 			{{x.pk}} <br>
 		{%endfor%}
 		</ol>
-</body>
-</html>
+{% endblock mainBody %}
