@@ -19,4 +19,21 @@
 			</div>
 		{%endfor%}
 		</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if the_object_list.has_previous %}
+            <a href="?page={{ the_object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ the_object_list.number }} of {{ the_object_list.paginator.num_pages }}
+        </span>
+
+        {% if the_object_list.has_next %}
+            <a href="?page={{ the_object_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
 {% endblock mainBody %}
