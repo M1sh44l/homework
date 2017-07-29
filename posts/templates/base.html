@@ -14,10 +14,12 @@
 
 	{% include "messages.html" %}
 
-	{% block mainBody %}
+	<div class="container">
+		{% block mainBody %}
 
-	{% endblock mainBody %}
-
+		{% endblock mainBody %}
+	</div>
+	
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>

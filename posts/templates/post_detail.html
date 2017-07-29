@@ -5,7 +5,10 @@
 {% endblock title %}
 
 {% block mainBody %}
-	<h1>This is the {{title}} Page</h1>
-	{{detailed_object}}
-
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<h1>{{detailed_object.title}} <small>{{detailed_object.timestamp}}</small></h1>
+		{{detailed_object.content| linebreaks}}
+	</div>
+</div>
 {% endblock mainBody %}
